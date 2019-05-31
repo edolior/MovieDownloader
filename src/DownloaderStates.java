@@ -26,5 +26,11 @@ public interface DownloaderStates {
 
     void resume();
 
+    void playMovie();
+
+    void pauseMovie();
+
+    void stopMovie();
+
 
 }

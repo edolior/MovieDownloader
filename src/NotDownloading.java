@@ -1,4 +1,11 @@
 public class NotDownloading implements DownloaderStates {
+
+    DownloaderMachine machine;
+
+    public NotDownloading(DownloaderMachine machine){
+        this.machine = machine;
+    }
+
     @Override
     public void turnOn() {
 
@@ -61,6 +68,21 @@ public class NotDownloading implements DownloaderStates {
 
     @Override
     public void resume() {
+
+    }
+
+    @Override
+    public void playMovie() {
+
+    }
+
+    @Override
+    public void pauseMovie() {
+
+    }
+
+    @Override
+    public void stopMovie() {
 
     }
 }

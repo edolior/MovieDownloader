@@ -1,4 +1,11 @@
 public class HasMemory implements DownloaderStates {
+
+    DownloaderMachine machine;
+
+    public HasMemory(DownloaderMachine machine){
+        this.machine = machine;
+    }
+
     @Override
     public void turnOn() {
 
@@ -61,6 +68,21 @@ public class HasMemory implements DownloaderStates {
 
     @Override
     public void resume() {
+
+    }
+
+    @Override
+    public void playMovie() {
+
+    }
+
+    @Override
+    public void pauseMovie() {
+
+    }
+
+    @Override
+    public void stopMovie() {
 
     }
 }

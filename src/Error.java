@@ -1,4 +1,11 @@
 public class Error implements DownloaderStates {
+
+    DownloaderMachine machine;
+
+    public Error(DownloaderMachine machine){
+        this.machine = machine;
+    }
+
     @Override
     public void turnOn() {
 
@@ -61,6 +68,21 @@ public class Error implements DownloaderStates {
 
     @Override
     public void resume() {
+
+    }
+
+    @Override
+    public void playMovie() {
+
+    }
+
+    @Override
+    public void pauseMovie() {
+
+    }
+
+    @Override
+    public void stopMovie() {
 
     }
 }

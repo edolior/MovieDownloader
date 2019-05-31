@@ -1,4 +1,13 @@
+import javafx.beans.property.IntegerProperty;
+
 public class InternetOn implements DownloaderStates {
+
+    DownloaderMachine machine;
+
+    public InternetOn(DownloaderMachine machine){
+        this.machine = machine;
+    }
+
     @Override
     public void turnOn() {
 
@@ -61,6 +70,21 @@ public class InternetOn implements DownloaderStates {
 
     @Override
     public void resume() {
+
+    }
+
+    @Override
+    public void playMovie() {
+
+    }
+
+    @Override
+    public void pauseMovie() {
+
+    }
+
+    @Override
+    public void stopMovie() {
 
     }
 }
