@@ -62,7 +62,7 @@ public class HasMemory implements DownloaderStates {
     }
 
     @Override
-    public void moveieOff() {
+    public void movieOff() {
 
     }
 

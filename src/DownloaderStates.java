@@ -22,7 +22,7 @@ public interface DownloaderStates {
 
     void holdMovie();
 
-    void moveieOff();
+    void movieOff();
 
     void resume();
 
