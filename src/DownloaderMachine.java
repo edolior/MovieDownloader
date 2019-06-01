@@ -57,77 +57,77 @@ public class DownloaderMachine {
 
     public void turnOff() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.turnOff();
     }
 
     public void internetOn() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.internetOn();
     }
 
     public void internetOff() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.internetOff();
     }
 
     public void fileRequest() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.fileRequest();
     }
 
     public void downloadAborted() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.downloadAborted();
     }
 
     public void downloadError() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.downloadError();
     }
 
     public void errorFixed() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.errorFixed();
     }
 
     public void movieOn() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.movieOn();
     }
 
     public void restartMovie() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.restartMovie();
     }
 
     public void holdMovie() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.holdMovie();
     }
 
     public void movieOff() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.movieOff();
     }
 
     public void resume() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.resume();
     }
 
     public void playMovie() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.playMovie();
     }
 
     public void pauseMovie() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.pauseMovie();
     }
 
     public void stopMovie() {
         for (DownloaderStates currState : parallelStates)
-            currState.turnOn();
+            currState.stopMovie();
     }
 
 }
