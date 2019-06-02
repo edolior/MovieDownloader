@@ -18,16 +18,19 @@ public class InternetOff implements DownloaderStates {
 
     @Override
     public void internetOn() {
-
+        System.out.println("exit internetOff state");
+        machine.parallelStates.remove(this);
+        machine.internetOn.internetOn();
     }
 
     @Override
     public void internetOff() {
-
+        System.out.println("enter internetOff state");
+        machine.parallelStates.add(this);
     }
 
     @Override
-    public void fileRequest() {
+    public void fileRequest(String filename) {
 
     }
 
@@ -83,6 +86,11 @@ public class InternetOff implements DownloaderStates {
 
     @Override
     public void stopMovie() {
+
+    }
+
+    @Override
+    public void fileDelete(String filename) {
 
     }
 }

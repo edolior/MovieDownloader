@@ -10,13 +10,12 @@ public class DownloaderMachine {
     DownloaderStates notDownloading;
     DownloaderStates isDownloading;
     DownloaderStates hasError;
+    DownloaderStates noMemory;
 
     List<DownloaderStates> parallelStates = new ArrayList<>();
-
-    enum UserStatus {Beginner, Advanced, Professional};
-
-    double userScore;
-    UserStatus userStatus;
+    int status;
+    double availableMemory;
+    int rank;
     Queue<String> filesPending = new LinkedList<>();
 
     public DownloaderMachine(){
@@ -28,6 +27,7 @@ public class DownloaderMachine {
 
         this.parallelStates.add(0, this.internetOff);
         this.parallelStates.add(1, this.notDownloading);
+        this.availableMemory = 100;
     }
 
     public DownloaderStates getInternetOn() {
@@ -70,9 +70,9 @@ public class DownloaderMachine {
             currState.internetOff();
     }
 
-    public void fileRequest() {
+    public void fileRequest(String filename) {
         for (DownloaderStates currState : parallelStates)
-            currState.fileRequest();
+            currState.fileRequest(filename);
     }
 
     public void downloadAborted() {
@@ -98,6 +98,11 @@ public class DownloaderMachine {
     public void restartMovie() {
         for (DownloaderStates currState : parallelStates)
             currState.restartMovie();
+    }
+
+    public void fileDelete(String filename) {
+        for (DownloaderStates currState : parallelStates)
+            currState.fileDelete(filename);
     }
 
     public void holdMovie() {

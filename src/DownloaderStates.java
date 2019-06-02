@@ -8,7 +8,7 @@ public interface DownloaderStates {
 
     void internetOff();
 
-    void fileRequest();
+    void fileRequest(String filename);
 
     void downloadAborted();
 
@@ -31,6 +31,8 @@ public interface DownloaderStates {
     void pauseMovie();
 
     void stopMovie();
+
+    void fileDelete(String filename);
 
 
 }

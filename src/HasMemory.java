@@ -27,13 +27,19 @@ public class HasMemory implements DownloaderStates {
     }
 
     @Override
-    public void fileRequest() {
-
+    public void fileRequest(String filename) {
+        if(machine.availableMemory > 0){
+            System.out.println("enter hasMemory state");
+            machine.parallelStates.add(this);
+        }
     }
 
     @Override
     public void downloadAborted() {
-
+        if(machine.availableMemory <= 0){
+            System.out.println("exit hasMemory state");
+            machine.parallelStates.remove(this);
+        }
     }
 
     @Override
@@ -83,6 +89,11 @@ public class HasMemory implements DownloaderStates {
 
     @Override
     public void stopMovie() {
+
+    }
+
+    @Override
+    public void fileDelete(String filename) {
 
     }
 }
