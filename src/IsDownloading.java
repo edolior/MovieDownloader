@@ -34,8 +34,9 @@ public class IsDownloading implements DownloaderStates {
     @Override
     public void fileRequest(String filename) {
         this.currFile = filename;
+        System.out.println("enter isDownloading state");
+        machine.parallelStates.add(this);
         if(machine.availableMemory > 10){
-            System.out.println("enter isDownloading state");
             if(machine.status > 4) {
                 while (count > 0){
                     count -= 1;
@@ -56,16 +57,22 @@ public class IsDownloading implements DownloaderStates {
             }
             machine.availableMemory -= 10;
             machine.rank += 1;
-            machine.parallelStates.add(this);
             machine.status += 1;
             count = 10;
+            System.out.println("download finished");
+            System.out.println("exit isDownloading state");
+            machine.parallelStates.remove(this);
+            machine.notDownloading.downloadAborted();
         }
 
         else{
             System.out.println("no memory");
             wait(4);
             count = 10;
+            System.out.println("exit isDownloading state");
+            machine.parallelStates.remove(this);
             machine.noMemory.downloadAborted();
+            machine.notDownloading.downloadAborted();
         }
     }
 

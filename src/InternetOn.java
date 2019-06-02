@@ -27,6 +27,7 @@ public class InternetOn implements DownloaderStates {
     public void internetOff() {
         System.out.println("exit internetOn state");
         machine.parallelStates.remove(this);
+        machine.internetOff.internetOff();
     }
 
     @Override
